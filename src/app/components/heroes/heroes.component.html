@@ -1,0 +1,22 @@
+<h2>My Heroes</h2>
+<mat-card>
+  <mat-form-field>
+    <input matInput #heroName placeholder="Hero name"/>
+  </mat-form-field>
+  <button mat-raised-button  (click)="add(heroName.value); heroName.value=''">
+    Add
+  </button>
+</mat-card>
+
+<mat-nav-list>
+  <a mat-list-item *ngFor="let hero of heroes">
+      <span mat-line>{{hero.name}}</span>
+    <a routerLink="/detail/{{hero.id}}">
+    </a>
+    <button mat-icon-button (click)="delete(hero)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </a>
+
+</mat-nav-list>
+
